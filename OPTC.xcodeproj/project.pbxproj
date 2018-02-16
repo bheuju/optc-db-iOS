@@ -110,6 +110,7 @@
 				8F8C0D9620367E5300C90D92 /* Resources */,
 				5C3568C629662C3B470568D6 /* [CP] Embed Pods Frameworks */,
 				C0658BAD541FDE5E130B0196 /* [CP] Copy Pods Resources */,
+				8F8C0DB3203691F800C90D92 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -209,6 +210,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OPTC/Pods-OPTC-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8F8C0DB3203691F800C90D92 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint";
 		};
 		C0658BAD541FDE5E130B0196 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

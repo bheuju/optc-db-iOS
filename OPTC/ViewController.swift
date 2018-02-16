@@ -13,21 +13,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        verifyCharactersFromRealm()
+    }
+    
+    func verifyCharactersFromRealm() {
+        guard let realm = try? Realm() else { return }
         let characters = DBManager.sharedInstance.getOptcCharacterFromDatabase()
-        let realm = try! Realm()
-        for character in characters {
-            try! realm.write {
-                realm.add(character)
+        if let charactersFromRealm = try? realm.objects(OPTCCharacter.self).map { $0 } {
+            for character in characters {
+                if !(charactersFromRealm.contains(where: { $0.id == character.id})) {
+                    try? realm.write {
+                        realm.add(character)
+                    }
+                }
             }
         }
-        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
-

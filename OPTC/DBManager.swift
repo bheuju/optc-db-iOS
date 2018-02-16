@@ -10,26 +10,26 @@ import Foundation
 import FMDB
 import ObjectMapper
 
-class DBManager{
+class DBManager {
     
-    var database : FMDatabase = FMDatabase()
-    //let queue : FMDatabaseQueue?
+    var database: FMDatabase = FMDatabase()
     static let sharedInstance = DBManager()
-    let databaseName : String = "OPTC.db"
+    let databaseName: String = "OPTC.db"
     
     init() {
         
-        let fileURL = try! FileManager.default
+        if let fileURL = try? FileManager.default
             .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            .appendingPathComponent(databaseName)
-        print(fileURL)
-        self.database = FMDatabase(url: fileURL)
-        
+            .appendingPathComponent(databaseName) {
+            print(fileURL)
+            self.database = FMDatabase(url: fileURL)
+        }
+    
         database.open()
         
-        let query1 : String = "CREATE TABLE IF NOT EXISTS OPTC (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, type TEXT, optcClass TEXT, hp INT, atk INT, rcv INT, cost INT, slots INT, stars INT, maxEXP INT)"
+        let query1: String = "CREATE TABLE IF NOT EXISTS OPTC (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, type TEXT, optcClass TEXT, hp INT, atk INT, rcv INT, cost INT, slots INT, stars INT, maxEXP INT)"
         
-        do{
+        do {
             try database.executeUpdate(query1, values: nil)
         } catch {
             print("Unable to create table")
@@ -43,9 +43,9 @@ extension DBManager {
     
     func getOptcCharacterFromDatabase() -> [OPTCCharacter] {
         
-        var characters : [OPTCCharacter] = [OPTCCharacter]()
+        var characters: [OPTCCharacter] = [OPTCCharacter]()
         database.open()
-        do{
+        do {
             let results = try database.executeQuery("Select * from OPTC", values: nil)
             while results.next() {
                 if let character = Mapper<OPTCCharacter>().map(JSONObject: results.resultDictionary) {
@@ -53,7 +53,7 @@ extension DBManager {
                 }
             }
             
-        } catch{
+        } catch {
             print("Error retrieving characters from database")
         }
         database.close()
