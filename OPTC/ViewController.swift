@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let characters = DBManager.sharedInstance.getOptcCharacterFromDatabase()
+        let realm = try! Realm()
+        for character in characters {
+            try! realm.write {
+                realm.add(character)
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

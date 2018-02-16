@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45FBA3E2D26B123730313C05 /* Pods_OPTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FBFA8D9DDC875E26A2DAC0C /* Pods_OPTC.framework */; };
 		8F8C0D9C20367E5300C90D92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C0D9B20367E5300C90D92 /* AppDelegate.swift */; };
 		8F8C0D9E20367E5300C90D92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C0D9D20367E5300C90D92 /* ViewController.swift */; };
 		8F8C0DA120367E5300C90D92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F8C0D9F20367E5300C90D92 /* Main.storyboard */; };
 		8F8C0DA320367E5300C90D92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F8C0DA220367E5300C90D92 /* Assets.xcassets */; };
 		8F8C0DA620367E5300C90D92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F8C0DA420367E5300C90D92 /* LaunchScreen.storyboard */; };
+		8F8C0DAE20367EC200C90D92 /* OPTCCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C0DAD20367EC200C90D92 /* OPTCCharacter.swift */; };
+		8F8C0DB0203685AF00C90D92 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C0DAF203685AF00C90D92 /* RealmHelper.swift */; };
+		8F8C0DB2203686F500C90D92 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C0DB1203686F500C90D92 /* DBManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FBFA8D9DDC875E26A2DAC0C /* Pods_OPTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OPTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8C0D9820367E5300C90D92 /* OPTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OPTC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8C0D9B20367E5300C90D92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F8C0D9D20367E5300C90D92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,11 @@
 		8F8C0DA220367E5300C90D92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F8C0DA520367E5300C90D92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F8C0DA720367E5300C90D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F8C0DAD20367EC200C90D92 /* OPTCCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPTCCharacter.swift; sourceTree = "<group>"; };
+		8F8C0DAF203685AF00C90D92 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		8F8C0DB1203686F500C90D92 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		97711CE661857517AC5BCD52 /* Pods-OPTC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OPTC.release.xcconfig"; path = "Pods/Target Support Files/Pods-OPTC/Pods-OPTC.release.xcconfig"; sourceTree = "<group>"; };
+		CD9C969B1DC5C29097C082F1 /* Pods-OPTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OPTC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OPTC/Pods-OPTC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45FBA3E2D26B123730313C05 /* Pods_OPTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A5DB0DA90423B0F1A076B87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD9C969B1DC5C29097C082F1 /* Pods-OPTC.debug.xcconfig */,
+				97711CE661857517AC5BCD52 /* Pods-OPTC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5AA66E95D2E1A0F08C57A635 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FBFA8D9DDC875E26A2DAC0C /* Pods_OPTC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8F8C0D8F20367E5300C90D92 = {
 			isa = PBXGroup;
 			children = (
 				8F8C0D9A20367E5300C90D92 /* OPTC */,
 				8F8C0D9920367E5300C90D92 /* Products */,
+				5A5DB0DA90423B0F1A076B87 /* Pods */,
+				5AA66E95D2E1A0F08C57A635 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +90,9 @@
 				8F8C0DA220367E5300C90D92 /* Assets.xcassets */,
 				8F8C0DA420367E5300C90D92 /* LaunchScreen.storyboard */,
 				8F8C0DA720367E5300C90D92 /* Info.plist */,
+				8F8C0DAD20367EC200C90D92 /* OPTCCharacter.swift */,
+				8F8C0DAF203685AF00C90D92 /* RealmHelper.swift */,
+				8F8C0DB1203686F500C90D92 /* DBManager.swift */,
 			);
 			path = OPTC;
 			sourceTree = "<group>";
@@ -71,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F8C0DAA20367E5300C90D92 /* Build configuration list for PBXNativeTarget "OPTC" */;
 			buildPhases = (
+				1FDE4FFB55A20E2E42BAD097 /* [CP] Check Pods Manifest.lock */,
 				8F8C0D9420367E5300C90D92 /* Sources */,
 				8F8C0D9520367E5300C90D92 /* Frameworks */,
 				8F8C0D9620367E5300C90D92 /* Resources */,
+				5C3568C629662C3B470568D6 /* [CP] Embed Pods Frameworks */,
+				C0658BAD541FDE5E130B0196 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +167,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1FDE4FFB55A20E2E42BAD097 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OPTC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C3568C629662C3B470568D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OPTC/Pods-OPTC-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OPTC/Pods-OPTC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0658BAD541FDE5E130B0196 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OPTC/Pods-OPTC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8F8C0D9420367E5300C90D92 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F8C0DB2203686F500C90D92 /* DBManager.swift in Sources */,
 				8F8C0D9E20367E5300C90D92 /* ViewController.swift in Sources */,
+				8F8C0DB0203685AF00C90D92 /* RealmHelper.swift in Sources */,
+				8F8C0DAE20367EC200C90D92 /* OPTCCharacter.swift in Sources */,
 				8F8C0D9C20367E5300C90D92 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +371,7 @@
 		};
 		8F8C0DAB20367E5300C90D92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD9C969B1DC5C29097C082F1 /* Pods-OPTC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +386,7 @@
 		};
 		8F8C0DAC20367E5300C90D92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97711CE661857517AC5BCD52 /* Pods-OPTC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
