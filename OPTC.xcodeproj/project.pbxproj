@@ -16,6 +16,11 @@
 		8F8C0DAE20367EC200C90D92 /* OPTCCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C0DAD20367EC200C90D92 /* OPTCCharacter.swift */; };
 		8F8C0DB0203685AF00C90D92 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C0DAF203685AF00C90D92 /* RealmHelper.swift */; };
 		8F8C0DB2203686F500C90D92 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C0DB1203686F500C90D92 /* DBManager.swift */; };
+		8F8C0DB62036F2AB00C90D92 /* ColumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C0DB42036F2AB00C90D92 /* ColumnCell.swift */; };
+		8F8C0DB72036F2AB00C90D92 /* ColumnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8C0DB52036F2AB00C90D92 /* ColumnCell.xib */; };
+		8FDE8E00203A7EB0005FF7EF /* RowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE8DFE203A7EB0005FF7EF /* RowCell.swift */; };
+		8FDE8E01203A7EB0005FF7EF /* RowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDE8DFF203A7EB0005FF7EF /* RowCell.xib */; };
+		8FDE8E03203ADE83005FF7EF /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE8E02203ADE83005FF7EF /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		8F8C0DAD20367EC200C90D92 /* OPTCCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPTCCharacter.swift; sourceTree = "<group>"; };
 		8F8C0DAF203685AF00C90D92 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		8F8C0DB1203686F500C90D92 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		8F8C0DB42036F2AB00C90D92 /* ColumnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnCell.swift; sourceTree = "<group>"; };
+		8F8C0DB52036F2AB00C90D92 /* ColumnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColumnCell.xib; sourceTree = "<group>"; };
+		8FDE8DFE203A7EB0005FF7EF /* RowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowCell.swift; sourceTree = "<group>"; };
+		8FDE8DFF203A7EB0005FF7EF /* RowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RowCell.xib; sourceTree = "<group>"; };
+		8FDE8E02203ADE83005FF7EF /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		97711CE661857517AC5BCD52 /* Pods-OPTC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OPTC.release.xcconfig"; path = "Pods/Target Support Files/Pods-OPTC/Pods-OPTC.release.xcconfig"; sourceTree = "<group>"; };
 		CD9C969B1DC5C29097C082F1 /* Pods-OPTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OPTC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OPTC/Pods-OPTC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,8 +103,21 @@
 				8F8C0DAD20367EC200C90D92 /* OPTCCharacter.swift */,
 				8F8C0DAF203685AF00C90D92 /* RealmHelper.swift */,
 				8F8C0DB1203686F500C90D92 /* DBManager.swift */,
+				8F8C0DB82036F2B500C90D92 /* Cells */,
+				8FDE8E02203ADE83005FF7EF /* UIImageView.swift */,
 			);
 			path = OPTC;
+			sourceTree = "<group>";
+		};
+		8F8C0DB82036F2B500C90D92 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8F8C0DB42036F2AB00C90D92 /* ColumnCell.swift */,
+				8F8C0DB52036F2AB00C90D92 /* ColumnCell.xib */,
+				8FDE8DFE203A7EB0005FF7EF /* RowCell.swift */,
+				8FDE8DFF203A7EB0005FF7EF /* RowCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,8 +183,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F8C0DB72036F2AB00C90D92 /* ColumnCell.xib in Resources */,
 				8F8C0DA620367E5300C90D92 /* LaunchScreen.storyboard in Resources */,
 				8F8C0DA320367E5300C90D92 /* Assets.xcassets in Resources */,
+				8FDE8E01203A7EB0005FF7EF /* RowCell.xib in Resources */,
 				8F8C0DA120367E5300C90D92 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,17 +219,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OPTC/Pods-OPTC-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -246,8 +275,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FDE8E03203ADE83005FF7EF /* UIImageView.swift in Sources */,
+				8FDE8E00203A7EB0005FF7EF /* RowCell.swift in Sources */,
 				8F8C0DB2203686F500C90D92 /* DBManager.swift in Sources */,
 				8F8C0D9E20367E5300C90D92 /* ViewController.swift in Sources */,
+				8F8C0DB62036F2AB00C90D92 /* ColumnCell.swift in Sources */,
 				8F8C0DB0203685AF00C90D92 /* RealmHelper.swift in Sources */,
 				8F8C0DAE20367EC200C90D92 /* OPTCCharacter.swift in Sources */,
 				8F8C0D9C20367E5300C90D92 /* AppDelegate.swift in Sources */,

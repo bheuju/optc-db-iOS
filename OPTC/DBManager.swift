@@ -28,7 +28,6 @@ class DBManager {
         database.open()
         
         let query1: String = "CREATE TABLE IF NOT EXISTS OPTC (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, type TEXT, optcClass TEXT, hp INT, atk INT, rcv INT, cost INT, slots INT, stars INT, maxEXP INT)"
-        
         do {
             try database.executeUpdate(query1, values: nil)
         } catch {

@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.1)
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
@@ -8,21 +9,28 @@ PODS:
   - Realm/Headers (3.0.2)
   - RealmSwift (3.0.2):
     - Realm (= 3.0.2)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
   - SwiftLint (0.24.0)
 
 DEPENDENCIES:
+  - Alamofire
   - FMDB
   - ObjectMapper
   - RealmSwift
+  - SDWebImage
   - SwiftLint
 
 SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
   RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   SwiftLint: a014c92b4664e8b13f380f8640a51bb1733778ba
 
-PODFILE CHECKSUM: e3be01922db1b0696e6e78c8b5bba50dd1882568
+PODFILE CHECKSUM: 5a5d73dac8c17a47ffec4ef05235e5ce1670f171
 
 COCOAPODS: 1.4.0

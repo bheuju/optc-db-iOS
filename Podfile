@@ -6,6 +6,8 @@ target 'OPTC' do
 	pod 'RealmSwift'
 	pod 'SwiftLint'
 	pod 'FMDB'
+	pod 'SDWebImage'
+	pod 'Alamofire'
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
