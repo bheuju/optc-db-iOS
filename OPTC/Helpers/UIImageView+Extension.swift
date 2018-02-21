@@ -13,13 +13,15 @@ import SDWebImage
 extension UIImageView {
     
     func loadImage(_ url: URL) {
-        self.sd_setImageWithPreviousCachedImage(with: url, placeholderImage: nil, options: .retryFailed, progress: nil) { (image, error,_, _) in
+        sd_setImageWithPreviousCachedImage(with: url, placeholderImage: nil, options: .retryFailed, progress: nil) { (image, error, _, _) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
             if image != nil {
                 print("Image downloaded successfully")
-            } else {
-                if let error = error {
-                    print(error.localizedDescription)
-                }
             }
         }
     }

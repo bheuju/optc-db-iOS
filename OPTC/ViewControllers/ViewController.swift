@@ -9,27 +9,47 @@
 import UIKit
 import RealmSwift
 import Alamofire
+import JavaScriptCore
 
 class ViewController: UIViewController {
-
-    var characters = [OPTCCharacter]()
+    
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    
+    var characters: [OPTCCharacter] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ScreenSize: \(UIScreen.main.bounds.size)")
+        
+        //print("ScreenSize: \(UIScreen.main.bounds.size)")
         
         tableView.register(RowCell.nib, forCellReuseIdentifier: RowCell.reuseIdentifier)
-//        Alamofire.request("https://optc-db.github.io/common/data/units.js").responseString { (response) in
-//            if let responseString = response.result.value {
-//                if let idx = responseString.index(of: "[") {
-//                    let arrayString = responseString[idx...]
-//                }
-//            }
-//        }
+
+        Alamofire.request("https://optc-db.github.io/common/data/units.js").responseString { [weak self](response) in
+            self?.parseJScript(response.result.value!, objName: "units")
+        }
+        
         print(UIDevice.current.orientation.isLandscape)
-        verifyCharactersFromRealm()
+        //verifyCharactersFromRealm()
         tableView.reloadData()
+    }
+    
+    func parseJScript(_ dump: String, objName: String) {
+        
+        guard let context = JSContext() else { return }
+        
+        //Execute javascript in swift
+        
+        //setup with objects
+        context.evaluateScript("var window = { \(objName) : null };")
+        //add data
+        //context.evaluateScript("window.\(objName) = 5;")
+        context.evaluateScript(dump)
+        
+        //get data
+        guard let result = context.objectForKeyedSubscript("window").objectForKeyedSubscript(objName) else { fatalError() }
+        print(result)
+        
     }
     
     func verifyCharactersFromRealm() {
@@ -68,11 +88,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: RowCell.reuseIdentifier, for: indexPath) as? RowCell {
-            cell.configureTableCell(withCharacter: characters[indexPath.row])
-            return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RowCell.reuseIdentifier, for: indexPath) as? RowCell else {
+            fatalError("No cell with the identifier")
         }
-       return UITableViewCell()
+        
+        cell.configureTableCell(withCharacter: characters[indexPath.row])
+        return cell
     }
-    
 }

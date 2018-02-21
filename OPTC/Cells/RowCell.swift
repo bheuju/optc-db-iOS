@@ -11,10 +11,13 @@ import UIKit
 class RowCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
     var character: OPTCCharacter!
+    
     static var nib: UINib {
         return UINib(nibName: "RowCell", bundle: nil)
     }
+    
     static var reuseIdentifier: String = "RowCell"
     
     override func awakeFromNib() {
