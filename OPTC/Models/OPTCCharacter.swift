@@ -19,10 +19,10 @@ class OPTCCharacter: Object, Mappable {
     let hp = RealmOptional<Int>()
     let atk = RealmOptional<Int>()
     let rcv = RealmOptional<Int>()
-    @objc dynamic var slot = 0
-    @objc dynamic var stars = 0
-    @objc dynamic var cmb = 0
-    @objc dynamic var maxEHP = 0
+    let slot = RealmOptional<Int>()
+    @objc dynamic var stars = ""
+    let cmb = RealmOptional<Int>()
+    let maxEHP = RealmOptional<Int>()
     
     override static func primaryKey() -> String? {
         return "id"
@@ -44,6 +44,11 @@ class OPTCCharacter: Object, Mappable {
         stars       <- map["stars"]
         cmb         <- map["cmb"]
         maxEHP      <- map["maxEHP"]
+    }
+    
+    func incrementID() -> Int {
+        guard let realm = try? Realm() else { return 0 }
+        return (realm.objects(OPTCCharacter.self).max(ofProperty: "id") as Int? ?? 0) + 1
     }
     
 }
