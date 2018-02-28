@@ -11,7 +11,7 @@ import RealmSwift
 import Alamofire
 import JavaScriptCore
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Alertable {
     
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -21,8 +21,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(RowCell.nib, forCellReuseIdentifier: RowCell.reuseIdentifier)
+        guard let realm = try? Realm() else { return }
+        let results = realm.objects(OPTCCharacter.self)
+        self.characters.append(objectsIn: results)
+        self.tableView.reloadData()
+    
+        progressIndicator(with: "Requesting data..")
         RequestManager().prepareForPlainRequest(with: Router.units) { [weak self] (success, results, _) in
             if let wSelf = self {
+                wSelf.hideIndicator()
                 if success {
                     if let responseString = results as? String {
                         wSelf.parseJScript(responseString, objName: "units")
@@ -32,7 +39,6 @@ class ViewController: UIViewController {
             }
         }
         //verifyCharactersFromRealm()
-        tableView.reloadData()
     }
     
     func parseJScript(_ dump: String, objName: String) {
@@ -47,16 +53,22 @@ class ViewController: UIViewController {
         //get data
         guard let result = context.objectForKeyedSubscript("window").objectForKeyedSubscript(objName) else { fatalError() }
         if let charactersArray = result.toArray() as NSArray? {
-            writeCharactersToDatabase(with: charactersArray, completion: {
-                guard let realm = try? Realm() else { return }
-                let charactersFromRealm = realm.objects(OPTCCharacter.self)
-                self.characters.append(objectsIn: charactersFromRealm)
-                self.tableView.reloadData()
+            progressIndicator(with: "Updating database...")
+            writeCharactersToDatabase(with: charactersArray, completion: { [weak self] in
+                if let wSelf = self {
+                    wSelf.hideIndicator()
+                    guard let realm = try? Realm() else { return }
+                    let charactersFromRealm = realm.objects(OPTCCharacter.self)
+                    wSelf.characters.append(objectsIn: charactersFromRealm)
+                    wSelf.tableView.reloadData()
+                }
+                
             })
         }
     }
     
     func writeCharactersToDatabase(with result: NSArray, completion: () -> Swift.Void ) {
+        self.characters.removeAll()
         guard let realm = try? Realm() else { return }
         let results = realm.objects(OPTCCharacter.self)
         try? realm.write {

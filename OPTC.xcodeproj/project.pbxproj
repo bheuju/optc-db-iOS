@@ -21,6 +21,7 @@
 		8F8C0DB2203686F500C90D92 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C0DB1203686F500C90D92 /* DBManager.swift */; };
 		8F8C0DB62036F2AB00C90D92 /* ColumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C0DB42036F2AB00C90D92 /* ColumnCell.swift */; };
 		8F8C0DB72036F2AB00C90D92 /* ColumnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8C0DB52036F2AB00C90D92 /* ColumnCell.xib */; };
+		8FD62225203FE6C3000D407C /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD62224203FE6C2000D407C /* Alertable.swift */; };
 		8FDE8E00203A7EB0005FF7EF /* RowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE8DFE203A7EB0005FF7EF /* RowCell.swift */; };
 		8FDE8E01203A7EB0005FF7EF /* RowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDE8DFF203A7EB0005FF7EF /* RowCell.xib */; };
 		8FDE8E03203ADE83005FF7EF /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE8E02203ADE83005FF7EF /* UIImageView+Extension.swift */; };
@@ -43,6 +44,7 @@
 		8F8C0DB1203686F500C90D92 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		8F8C0DB42036F2AB00C90D92 /* ColumnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnCell.swift; sourceTree = "<group>"; };
 		8F8C0DB52036F2AB00C90D92 /* ColumnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColumnCell.xib; sourceTree = "<group>"; };
+		8FD62224203FE6C2000D407C /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		8FDE8DFE203A7EB0005FF7EF /* RowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowCell.swift; sourceTree = "<group>"; };
 		8FDE8DFF203A7EB0005FF7EF /* RowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RowCell.xib; sourceTree = "<group>"; };
 		8FDE8E02203ADE83005FF7EF /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		8F8C0D9A20367E5300C90D92 /* OPTC */ = {
 			isa = PBXGroup;
 			children = (
+				8FD62223203FE6A9000D407C /* Protocols */,
 				8F8C0D9B20367E5300C90D92 /* AppDelegate.swift */,
 				8F8C0D9F20367E5300C90D92 /* Main.storyboard */,
 				0408444B203D734500E8697E /* Helpers */,
@@ -159,6 +162,14 @@
 				8FDE8DFF203A7EB0005FF7EF /* RowCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		8FD62223203FE6A9000D407C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8FD62224203FE6C2000D407C /* Alertable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-OPTC/Pods-OPTC-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -271,6 +283,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -322,6 +335,7 @@
 				8F8C0D9E20367E5300C90D92 /* ViewController.swift in Sources */,
 				8F64405B203FB92100BC585B /* Router.swift in Sources */,
 				8F64405D203FBDA400BC585B /* RequestManager.swift in Sources */,
+				8FD62225203FE6C3000D407C /* Alertable.swift in Sources */,
 				8F8C0DB62036F2AB00C90D92 /* ColumnCell.swift in Sources */,
 				8F8C0DB0203685AF00C90D92 /* RealmHelper.swift in Sources */,
 				8F64405F203FBE7400BC585B /* AppError.swift in Sources */,
