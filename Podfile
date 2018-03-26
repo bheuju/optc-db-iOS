@@ -9,5 +9,5 @@ target 'OPTC' do
 	pod 'FMDB'
 	pod 'SDWebImage'
 	pod 'Alamofire'
-	pod 'MBProgressHUD'
+    pod 'MBProgressHUD'
 end
