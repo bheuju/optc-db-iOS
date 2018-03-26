@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 import ObjectMapper
 
-class OPTCCharacter: Object, Mappable {
+class Character: Object, Mappable {
     
     @objc dynamic var id = 0
     @objc dynamic var name = ""
@@ -48,7 +48,6 @@ class OPTCCharacter: Object, Mappable {
     
     func incrementID() -> Int {
         guard let realm = try? Realm() else { return 0 }
-        return (realm.objects(OPTCCharacter.self).max(ofProperty: "id") as Int? ?? 0) + 1
+        return (realm.objects(Character.self).max(ofProperty: "id") as Int? ?? 0) + 1
     }
-    
 }

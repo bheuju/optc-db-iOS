@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9" orientation="landscape">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,52 +10,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OPTC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="OPTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="euj-G6-Sb8">
-                                <rect key="frame" x="0.0" y="20" width="1366" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Unm-yU-6Ny"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dl3-BL-w1E">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Rpi-Xy-5VC"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0af-9X-0pU">
-                                <rect key="frame" x="0.0" y="60" width="1366" height="964"/>
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="CpG-dl-Oys"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="aqK-hd-ieR"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="DGy-P0-keD"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="35A-Ds-gTx"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="dl3-BL-w1E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0xW-dR-mrG"/>
+                            <constraint firstItem="dl3-BL-w1E" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5uA-QS-Bwg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0af-9X-0pU" secondAttribute="bottom" id="DqW-LR-HU6"/>
                             <constraint firstItem="0af-9X-0pU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gwt-tr-OZC"/>
-                            <constraint firstItem="0af-9X-0pU" firstAttribute="top" secondItem="euj-G6-Sb8" secondAttribute="bottom" id="HL2-eN-iPq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="euj-G6-Sb8" secondAttribute="trailing" id="fy6-53-fRg"/>
-                            <constraint firstItem="euj-G6-Sb8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jqm-2F-Njf"/>
+                            <constraint firstItem="dl3-BL-w1E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YxK-gb-Slv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0af-9X-0pU" secondAttribute="trailing" id="lv5-eu-1RL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="euj-G6-Sb8" secondAttribute="top" id="ncC-bX-VzH"/>
+                            <constraint firstItem="0af-9X-0pU" firstAttribute="top" secondItem="dl3-BL-w1E" secondAttribute="bottom" id="t1f-r6-vRO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="searchTextField" destination="euj-G6-Sb8" id="djo-Dp-EY6"/>
+                        <outlet property="searchBar" destination="dl3-BL-w1E" id="lsv-AY-NPi"/>
                         <outlet property="tableView" destination="0af-9X-0pU" id="Ls9-rq-fMF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="111"/>
+            <point key="canvasLocation" x="136.80000000000001" y="110.19490254872565"/>
         </scene>
     </scenes>
 </document>

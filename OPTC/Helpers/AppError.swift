@@ -22,7 +22,6 @@ enum AppError: Error, LocalizedError {
             return message
         }
     }
-    
 }
 
 enum ResponseError {
@@ -38,4 +37,3 @@ enum ResponseError {
         }
     }
 }
-

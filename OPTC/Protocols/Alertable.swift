@@ -89,4 +89,3 @@ class PopOverAlertPresenter {
         self.progressHUD = nil
     }
 }
-

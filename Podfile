@@ -6,7 +6,6 @@ target 'OPTC' do
 	pod 'ObjectMapper'
 	pod 'RealmSwift'
 	pod 'SwiftLint'
-	pod 'FMDB'
 	pod 'SDWebImage'
 	pod 'Alamofire'
     pod 'MBProgressHUD'
